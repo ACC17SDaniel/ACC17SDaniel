@@ -98,23 +98,23 @@ yearTwo = awesomeYear%100
 
 weekNumber = (monDay+((13*(yrMonth+1))/5)+yearTwo+(yearTwo/4)+(yearOne/4)-(2*yearOne))
 
-if weekNumber == 1:
+if weekNumber == 3:
     print("moday")
 
-elif weekNumber == 2:
+elif weekNumber == 4:
     print("tuday")
     
-elif weekNumber == 3:
+elif weekNumber == 5:
     print("weday")
     
-elif weekNumber == 4:
+elif weekNumber == 6:
     print("thuday")
     
-elif weekNumber == 5:
+elif weekNumber == 7:
     print("fiday")
     
-elif weekNumber == 6:
+elif weekNumber == 1:
     print("sarday")
     
-elif weekNumber == 7:
+elif weekNumber == 2:
     print("suday")
