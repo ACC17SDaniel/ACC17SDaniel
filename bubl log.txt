@@ -1,0 +1,43 @@
+BEFORE PASS 1: [7, 3, 2, 4, 1, 5, 8, 6]
+PASS 1
+[7, 3, 2, 4, 1, 5, 8, 6] Comparing L[0] and L[1] No Swap
+[7, 3, 2, 4, 1, 5, 8, 6] Comparing L[1] and L[2] No Swap
+[7, 3, 4, 2, 1, 5, 8, 6] Comparing L[2] and L[3] Swap: 2 and 4
+[7, 3, 4, 2, 1, 5, 8, 6] Comparing L[3] and L[4] No Swap
+[7, 3, 4, 2, 5, 1, 8, 6] Comparing L[4] and L[5] Swap: 1 and 5
+[7, 3, 4, 2, 5, 8, 1, 6] Comparing L[5] and L[6] Swap: 1 and 8
+[7, 3, 4, 2, 5, 8, 6, 1] Comparing L[6] and L[7] Swap: 1 and 6
+BEFORE PASS 2: [7, 3, 4, 2, 5, 8, 6, 1]
+PASS 2
+[7, 3, 4, 2, 5, 8, 6, 1] Comparing L[0] and L[1] No Swap
+[7, 4, 3, 2, 5, 8, 6, 1] Comparing L[1] and L[2] Swap: 3 and 4
+[7, 4, 3, 2, 5, 8, 6, 1] Comparing L[2] and L[3] No Swap
+[7, 4, 3, 5, 2, 8, 6, 1] Comparing L[3] and L[4] Swap: 2 and 5
+[7, 4, 3, 5, 8, 2, 6, 1] Comparing L[4] and L[5] Swap: 2 and 8
+[7, 4, 3, 5, 8, 6, 2, 1] Comparing L[5] and L[6] Swap: 2 and 6
+BEFORE PASS 3: [7, 4, 3, 5, 8, 6, 2, 1]
+PASS 3
+[7, 4, 3, 5, 8, 6, 2, 1] Comparing L[0] and L[1] No Swap
+[7, 4, 3, 5, 8, 6, 2, 1] Comparing L[1] and L[2] No Swap
+[7, 4, 5, 3, 8, 6, 2, 1] Comparing L[2] and L[3] Swap: 3 and 5
+[7, 4, 5, 8, 3, 6, 2, 1] Comparing L[3] and L[4] Swap: 3 and 8
+[7, 4, 5, 8, 6, 3, 2, 1] Comparing L[4] and L[5] Swap: 3 and 6
+BEFORE PASS 4: [7, 4, 5, 8, 6, 3, 2, 1]
+PASS 4
+[7, 4, 5, 8, 6, 3, 2, 1] Comparing L[0] and L[1] No Swap
+[7, 5, 4, 8, 6, 3, 2, 1] Comparing L[1] and L[2] Swap: 4 and 5
+[7, 5, 8, 4, 6, 3, 2, 1] Comparing L[2] and L[3] Swap: 4 and 8
+[7, 5, 8, 6, 4, 3, 2, 1] Comparing L[3] and L[4] Swap: 4 and 6
+BEFORE PASS 5: [7, 5, 8, 6, 4, 3, 2, 1]
+PASS 5
+[7, 5, 8, 6, 4, 3, 2, 1] Comparing L[0] and L[1] No Swap
+[7, 8, 5, 6, 4, 3, 2, 1] Comparing L[1] and L[2] Swap: 5 and 8
+[7, 8, 6, 5, 4, 3, 2, 1] Comparing L[2] and L[3] Swap: 5 and 6
+BEFORE PASS 6: [7, 8, 6, 5, 4, 3, 2, 1]
+PASS 6
+[8, 7, 6, 5, 4, 3, 2, 1] Comparing L[0] and L[1] Swap: 7 and 8
+[8, 7, 6, 5, 4, 3, 2, 1] Comparing L[1] and L[2] No Swap
+BEFORE PASS 7: [8, 7, 6, 5, 4, 3, 2, 1]
+PASS 7
+[8, 7, 6, 5, 4, 3, 2, 1] Comparing L[0] and L[1] No Swap
+OUTPUT(sorted list): [8, 7, 6, 5, 4, 3, 2, 1]
