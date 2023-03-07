@@ -1,27 +1,35 @@
-#RPG
+#RPG Battle System
 #Inputs: Gamemode, Character Selection, Attacks
 #Hypotheses 1: Random characters, One charges a large amount of times and attacks, other randomly attacks: Prediction: Charging character loses
 #Hypotheses 2: Random characters, One switches between attacking and defending every turn, other randomly attacks: Prediction: Pattern character wins
 import random
 import time
-import csv
-csvFile = open("funny.csv", "w")
-writer = csv.writer(csvFile)
+import pandas
+import turtle
+funny = random.randint(1, 100)
+if funny == 1:
+    tr = turtle.Turtle()
+    wn = turtle.Screen()
+    wn.addshape('peta.gif')
+    tr.shape('peta.gif')
+    wn.mainloop()
 
-print("In a world where nothing makes any sense whatsoever...")
-time.sleep(2)
-print("Five nutcases battle to the uhh...")
-time.sleep(1)
-print("not really to the death more like to the slightly damaged...")
-time.sleep(2)
-print("seriously...")
-time.sleep(1)
-print("why is there five idiots fighting in the middle of a command window")
-time.sleep(3)
-print("Welcome to...")
-time.sleep(4)
-print("~~~~~~~~~~\ngame.jpeg\n~~~~~~~~~~")
-time.sleep(2)
+skipIntro = int(input("Do you wanna skip the stupidly long intro? (1 for yes, 0 for no)"))
+if skipIntro != 1:
+    print("In a world where nothing makes any sense whatsoever...")
+    time.sleep(2)
+    print("Five nutcases battle to the uhh...")
+    time.sleep(1)
+    print("not really to the death more like to the slightly damaged...")
+    time.sleep(2)
+    print("seriously...")
+    time.sleep(1)
+    print("why is there five idiots fighting in the middle of a command window")
+    time.sleep(3)
+    print("Welcome to...")
+    time.sleep(4)
+    print("~~~~~~~~~~\ngame.jpeg\n~~~~~~~~~~")
+    time.sleep(2)
 
 #Input 1: Gamemode
 gamemode = 0
@@ -34,7 +42,13 @@ while gamemode < 1 or gamemode > 4:
     if gamemode < 1 or gamemode > 4:
         print("\nyou're not funny\n")
         time.sleep(1)
+        
+if gamemode == 3:
+    print("Hypotheses 1: Random characters, One charges a large amount of times and attacks, other randomly attacks: Prediction: Charging character loses")
 
+
+if gamemode == 4:
+    print("Hypotheses 2: Random characters, One switches between attacking and defending every turn, other randomly attacks: Prediction: Pattern character wins")
 #Input 2: Character Selection
 def charselect():
     char = 0
@@ -72,18 +86,19 @@ else:
 combination = [char1, char2]
 combination.sort()
 nameList = ["A friendly playfight begins!", "Time to fight fire with fire!", "Two rivals face each other on the battlefield...", "What a bad memory.", "Two Mistakes.", "A Petty Argument.", "Neither of these people know each other but they don't like each other", "Creator vs Creation.", "Absolutely Electric.", "Deja Vu.", "You're screwed.", "There's an IMPOSTER among us!"]
-time.sleep(0.5)
-print("BATTLE!")
-time.sleep(1)
-print(charList[char1-1]+"\n\nVS\n\n"+charList[char2-1])
-time.sleep(1)
+if gamemode <= 2:
+    time.sleep(0.5)
+    print("BATTLE!")
+    time.sleep(1)
+    print(charList[char1-1]+"\n\nVS\n\n"+charList[char2-1])
+    time.sleep(1)
 
-time.sleep(1)
-print("\nBEGIN")
-print("\n------------------------------------\n")
+    time.sleep(1)
+    print("\nBEGIN")
+    print("\n------------------------------------\n")
 inGame = True
 # [HP, Attack, Defense, Intellect] 
-stats = [[180, 10, 10, 3], [240, 7, 12, 2], [120, 18, 6, 7], [150, 6, 14, 20], [280, 13, 14, 15], [999, 999, 999, 999]]
+stats = [[180, 10, 10, 3], [240, 7, 12, 2], [120, 18, 6, 7], [150, 6, 14, 20], [240, 9, 16, 15], [999, 999, 999, 999]]
 turn = 1
 playerControl = 0
 secondPlayer = 0
@@ -101,30 +116,31 @@ elif (stats[char1-1])[3] < (stats[char2-1])[3]:
 else:
     playerControl = random.randint(1, 2)
 #whole bunch of titles
-if combination == [1, 2]:
-    print("\n'"+nameList[0]+"'\n")
-elif combination == [1, 3]:
-    print("\n'"+nameList[1]+"'\n")
-elif combination == [1, 4]:
-    print("\n'"+nameList[2]+"'\n")
-elif combination == [1, 5]:
-    print("\n'"+nameList[3]+"'\n")
-elif combination == [2, 3]:
-    print("\n'"+nameList[4]+"'\n")
-elif combination == [2, 4]:
-    print("\n'"+nameList[5]+"'\n")
-elif combination == [2, 5]:
-    print("\n'"+nameList[6]+"'\n")
-elif combination == [3, 4]:
-    print("\n'"+nameList[7]+"'\n")
-elif combination == [3, 5]:
-    print("\n'"+nameList[8]+"'\n")
-elif combination == [4, 5]:
-    print("\n'"+nameList[9]+"'\n")
-elif combination[0] == combination[1]:
-    print("\n'"+nameList[11]+"'\n")
-else:
-    print("\n'"+nameList[10]+"'\n")
+if gamemode <= 2:
+    if combination == [1, 2]:
+        print("\n'"+nameList[0]+"'\n")
+    elif combination == [1, 3]:
+        print("\n'"+nameList[1]+"'\n")
+    elif combination == [1, 4]:
+        print("\n'"+nameList[2]+"'\n")
+    elif combination == [1, 5]:
+        print("\n'"+nameList[3]+"'\n")
+    elif combination == [2, 3]:
+        print("\n'"+nameList[4]+"'\n")
+    elif combination == [2, 4]:
+        print("\n'"+nameList[5]+"'\n")
+    elif combination == [2, 5]:
+        print("\n'"+nameList[6]+"'\n")
+    elif combination == [3, 4]:
+        print("\n'"+nameList[7]+"'\n")
+    elif combination == [3, 5]:
+        print("\n'"+nameList[8]+"'\n")
+    elif combination == [4, 5]:
+        print("\n'"+nameList[9]+"'\n")
+    elif combination[0] == combination[1]:
+        print("\n'"+nameList[11]+"'\n")
+    else:
+        print("\n'"+nameList[10]+"'\n")
 
 def moveselect(x):
     move = 0
@@ -175,15 +191,21 @@ p2Def = False
 heal = 0
 time.sleep(1.5)
 multiplier = 0
-winningPlayer = ["Winning Player"]
-winningChar = ["Winning Character"]
-losingPlayer = ["Losing Player"]
-losingChar = ["Losing Character"]
-turnCount = ["Turn Count"]
+winningPlayer = []
+winningChar = []
+losingPlayer = []
+losingChar = []
+turnCount = []
+hpDiff = []
+p1Damage = []
+p2Damage = []
+p1Attacks = []
+p2Attacks = []
 if gamemode <= 2:
     while inGame == True:
         for i in range(2):
             if playerControl == 1 and hp[0] != 0:
+                damage = 0
                 p1Def = False
                 print("PLAYER ONE! GO!")
                 time.sleep(1)
@@ -214,16 +236,19 @@ if gamemode <= 2:
                         print("All of PLAYER ONE's energy was used up!")
                     time.sleep(1.5)
                     p1Charge = 0
+                    p1Attacks.append(1)
                 elif p1Move == 3:
                     p1Def = True
                     print("PLAYER ONE used "+(moves[2])[char1-1]+"!")
                     time.sleep(1)
                     print("Their defense increased significantly!")
                     time.sleep(1.5)
+                    p1Attacks.append(3)
                 elif p1Move == 4:
                     p1Charge += 1
                     print("PLAYER ONE absorbed energy...")
                     time.sleep(1.5)
+                    p1Attacks.append(4)
     # HOOOOOO BOY
                 elif p1Move == 2:
                     if char1 == 2:
@@ -267,12 +292,15 @@ if gamemode <= 2:
                             else:
                                 print("PLAYER TWO blocked it!")    
                         print("It dealt "+str(damage)+" damage!")
+                    p1Attacks.append(2)
                     time.sleep(1.5)
+                p1Damage.append(damage)
                 playerControl = 2
                 if hp[1] < 0:
                     hp[1] = 0
                 
             elif playerControl == 2 and hp[1] != 0:
+                damage = 0
                 p2Def = False
                 if gamemode == 2:
                     print("PLAYER TWO! GO!")
@@ -306,16 +334,19 @@ if gamemode <= 2:
                         print("All of PLAYER TWO's energy was used up!")
                     time.sleep(1.5)
                     p2Charge = 0
+                    p2Attacks.append(1)
                 elif p2Move == 3:
                     p2Def = True
                     print("PLAYER TWO used "+(moves[2])[char2-1]+"!")
                     time.sleep(1)
                     print("Their defense increased significantly!")
                     time.sleep(1.5)
+                    p2Attacks.append(3)
                 elif p2Move == 4:
                     p2Charge += 1
                     print("PLAYER TWO absorbed energy...")
                     time.sleep(1.5)
+                    p2Attacks.append(4)
                 elif p2Move == 2:
                     if char2 == 2:
                         heal = random.randint(10, 25)
@@ -359,6 +390,8 @@ if gamemode <= 2:
                                 print("PLAYER ONE blocked it!")
                         print("It dealt "+str(damage)+" damage!")
                     time.sleep(1.5)
+                    p2Attacks.append(2)
+                p2Damage.append(damage)
                 playerControl = 1
                 if hp[0] < 0:
                     hp[0] = 0
@@ -487,6 +520,7 @@ else:
             losingPlayer.append(1)
             losingChar.append(char1)
             turnCount.append(turn)
+            hpDiff.append(hp[1])
             
         if hp[1] == 0:
             print("Player 1 ("+charList[char1-1]+") defeated Player 2 ("+charList[char2-1]+") in the span of "+str(turn)+" turns.")
@@ -495,23 +529,24 @@ else:
             losingPlayer.append(2)
             losingChar.append(char2)
             turnCount.append(turn)
+            hpDiff.append(hp[0])
         char1 = random.randint(1, 5)
         char2 = random.randint(1, 5)
         turn = 1
         hp = [(stats[char1-1])[0], (stats[char2-1])[0]]
         inGame = True
-    writer.writerow(winningPlayer)
-    writer.writerow(winningChar)
-    writer.writerow(losingPlayer)
-    writer.writerow(losingChar)
-    writer.writerow(turnCount)
-    
+    results = pandas.DataFrame([winningPlayer, winningChar, losingPlayer, losingChar, turnCount, hpDiff])
+    results.to_csv('funny.csv')
+winPlay = []    
 if gamemode <= 2:
     print("\n--------------------------------\n")
     print("THE WINNER IS...")
     time.sleep(2)
     if hp[0] == 0:
         print("PLAYER TWO!!!")
+        winPlay = [2]  
     if hp[1] == 0:
         print("PLAYER ONE!!!")
-csvFile.close()
+        winPlay = [1]  
+    results = pandas.DataFrame([p1Damage, p2Damage, winPlay, p1Attacks, p2Attacks])
+    results.to_csv('livefunnyreaction.csv')
